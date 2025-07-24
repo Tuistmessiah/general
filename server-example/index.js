@@ -7,9 +7,9 @@ app.use(express.json());
 // 1. PROMISE EXAMPLE: mysql2/promise uses Promises instead of callbacks
 const pool = mysql.createPool({
   host: 'localhost',
-  port: 3307,
+  // port: 3307,
   user: 'root',
-  password: 'spyro123',
+  password: 'YOUR_PASSWORD',
   database: 'pet_shop'
 });
 
