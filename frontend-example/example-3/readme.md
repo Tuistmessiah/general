@@ -1,0 +1,1 @@
+This is an example of a frontend application that can be run as a standalone client

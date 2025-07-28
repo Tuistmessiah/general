@@ -13,6 +13,14 @@ const pool = mysql.createPool({
   database: 'pet_shop'
 });
 
+// ---- CORS Handling ----
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Allow all origins (for development)
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT'); // Allowed methods
+  res.header('Access-Control-Allow-Headers', 'Content-Type'); // Allowed headers
+  next();
+});
+
 // ---- MIDDLEWARE ----
 const logRequests = (req, res, next) => {
   // 2. CALLBACK EXAMPLE: next() is a callback function
@@ -63,10 +71,7 @@ app.get('/random-dogs/:count', async (req, res) => {
   const dogs = await Promise.all(dogPromises);
   const dogImages = dogs.map(dog => dog.data.message);
 
-  res.send(`
-    <h1>${count} Random Dogs</h1>
-    ${dogImages.map(img => `<img src="${img}" height="200">`).join('')}
-  `);
+  res.json(dogImages);
 });
 
 // PUT update cat with Promise resolve/reject

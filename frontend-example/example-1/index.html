@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doggy API Demo</title>
+  <!-- STEP 2: Add CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #dogContainer {
+      margin: 20px auto;
+      max-width: 500px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- STEP 1: Basic HTML -->
+  <h1>🐶 Random Dog Generator</h1>
+  <button id="fetchBtn">Get Dog!</button>
+  <div id="dogContainer"></div>
+
+  <!-- STEP 3: Add JavaScript -->
+  <script>
+    console.log('wo xi huan guangzhou!!!!')
+    // STEP 4: Event Listener
+    document.getElementById('fetchBtn').addEventListener('click', async () => {
+        document.getElementById('dogContainer').innerHTML = `
+         No connection yet... check the next example :)
+        `;
+    });
+  </script>
+</body>
+</html>
