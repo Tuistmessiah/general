@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+  }
+  nav {
+    margin-bottom: 1em;
+  }
+  button {
+    margin-right: 1em;
+  }
+  .hidden {
+    display: none;
+  }
+  .content-section {
+    padding: 1em;
+    border: 1px solid #ccc;
+  }
+  .flex-container {
+    display: flex;
+    gap: 1em;
+  }
+  .box {
+    flex: 1;
+    background: #eee;
+    padding: 1em;
+    text-align: center;
+  }
+  .row {
+    display: flex;
+  }
+  .col-6 {
+    width: 50%;
+    padding: 1em;
+    border: 1px solid #ddd;
+  }
+  a:hover {
+    color: red;
+  }
+  .first-child:first-child {
+    font-weight: bold;
+  }
+  
