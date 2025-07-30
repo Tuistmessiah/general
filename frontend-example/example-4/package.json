@@ -1,0 +1,16 @@
+{
+  "name": "example-4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "serve public"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "serve": "^14.2.4"
+  }
+}

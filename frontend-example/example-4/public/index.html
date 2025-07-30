@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Fundamentals Overview</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <button onclick="showSection('html5')">HTML5</button>
+    <button onclick="showSection('css')">CSS Basics</button>
+    <button onclick="showSection('layout')">CSS Layout</button>
+  </nav>
+
+  <main>
+    <section id="html5" class="content-section">
+      <h2>HTML5 Semantic Elements</h2>
+      <p>Use semantic tags like <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, etc.</p>
+      <pre><code>&lt;article&gt;
+  &lt;header&gt;Title&lt;/header&gt;
+  &lt;p&gt;Content...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+
+      <h3>Custom Data Attributes</h3>
+      <input id="name" data-format="[A-Za-z ]+" data-error-message="Enter full name">
+      <button onclick="validate()">Validate</button>
+    </section>
+
+    <section id="css" class="content-section hidden">
+      <h2>CSS Selectors</h2>
+      <ul>
+        <li><strong>Element:</strong> <code>p { color: red; }</code></li>
+        <li><strong>Class:</strong> <code>.box { padding: 10px; }</code></li>
+        <li><strong>ID:</strong> <code>#main { margin: auto; }</code></li>
+        <li><strong>Attribute:</strong> <code>input[required] { border: 1px solid red; }</code></li>
+      </ul>
+
+      <h3>Pseudo-classes</h3>
+      <p><a href="#">Hover over me</a></p>
+      <p class="first-child">I’m a first child</p>
+    </section>
+
+    <section id="layout" class="content-section hidden">
+      <h2>CSS Layout</h2>
+      <h3>Flexbox</h3>
+      <div class="flex-container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+      </div>
+
+      <h3>Responsive Grid</h3>
+      <div class="row">
+        <div class="col-6">Left</div>
+        <div class="col-6">Right</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
