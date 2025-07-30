@@ -28,7 +28,7 @@ jobs:
         run: npm test
 
       - name: Debug: List publish folder
-        run: ls -R frontend-example/example-4/public
+        run: ls -R public
 
   deploy:
     needs: build
