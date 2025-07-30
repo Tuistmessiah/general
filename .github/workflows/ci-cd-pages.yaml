@@ -27,7 +27,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Debug: List publish folder
+      - name: Debug - List publish folder
         run: ls -R public
 
   deploy:
