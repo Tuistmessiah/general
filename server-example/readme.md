@@ -21,10 +21,17 @@
     ```
    - API will be available at: http://localhost:3000
 
+4. **Run the Frontend**
+
+  The example in `frontend-example/example-3` uses a get request, to generate a random dog image, from this server.
+  Simply open the `html` file or run the `/public` inside `/example-3` with an `http-server`. 
+
+
 ## API Map
 
+ (to be completed)
 
-## 📚 Core Concepts Explained
+## 📚 Core Concepts Explained (study)
 
 #### Links / Resources / Study / Practice
   - [Node](https://www.w3schools.com/nodejs/default.asp)

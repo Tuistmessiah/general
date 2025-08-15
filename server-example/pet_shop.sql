@@ -15,5 +15,5 @@ CREATE TABLE cats (
 -- 4. Insert funny cat data
 INSERT INTO cats (name, breed, evilness) VALUES
   ('Mr. Whiskers', 'Sphynx', 8),
-  ('Chairman Meow', 'Siamese', 10),
+  ('Chairman Meow', 'Siamese', 5),
   ('Fluffy', NULL, 3);
