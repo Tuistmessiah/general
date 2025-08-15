@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cool Moving Objects</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #111, #000);
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+
+    const mouse = { x: width / 2, y: height / 2 };
+    document.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    class Ball {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 4;
+        this.vy = (Math.random() - 0.5) * 4;
+        this.size = 8 + Math.random() * 12;
+        this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+      }
+      update() {
+        // Simple bouncing
+        if (this.x < this.size || this.x > width - this.size) this.vx *= -1;
+        if (this.y < this.size || this.y > height - this.size) this.vy *= -1;
+
+        // "Chasing" effect toward mouse
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        this.vx += dx * 0.0005;
+        this.vy += dy * 0.0005;
+
+        // Apply movement
+        this.x += this.vx;
+        this.y += this.vy;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    const balls = Array.from({ length: 20 }, () => new Ball());
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      balls.forEach(ball => {
+        ball.update();
+        ball.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    });
+
+    animate();
+  </script>
+</body>
+</html>

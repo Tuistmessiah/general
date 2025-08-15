@@ -1,13 +1,10 @@
-/* Base Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
+/* Original Dog API Demo Styles */
+.header {
     text-align: center;
     padding: 20px;
-  }
-  
-  /* Selectors */
-  #fetchBtn {
+}
+
+#fetchBtn {
     padding: 10px 15px;
     background: #4CAF50;
     color: white;
@@ -19,76 +16,531 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-  
-  .highlight {
+}
+
+.highlight {
     color: #e74c3c;
-  }
-  
-  /* Layout */
-  #dogContainer {
+}
+
+#dogContainer {
     margin: 20px auto;
     max-width: 500px;
     background: linear-gradient(to bottom, #fff, #f0f0f0);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-  
-  /* Images */
-  img {
+}
+
+img {
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border: 3px solid #3498db;
-  }
-  
-  /* Interactions */
-  button:hover {
+}
+
+button:hover {
     background-color: #2ecc71;
     transform: scale(1.05);
-  }
-  
-  /* Pseudo-elements */
-  .timestamp::before {
+}
+
+.timestamp::before {
     content: "⏱️ ";
-  }
-  
-  p::first-letter {
+}
+
+p::first-letter {
     font-size: 1.5em;
     color: #9b59b6;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
+}
+
+@keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-  }
-  
-  .animate {
+}
+
+.animate {
     animation: fadeIn 0.5s ease-out;
-  }
-  
-  /* Stats */
-  .dog-stats p:nth-child(odd) {
+}
+
+.dog-stats p:nth-child(odd) {
     background-color: #f0f0f0;
-  }
-  
-  .error {
+}
+
+.error {
     color: #e74c3c;
     font-weight: bold;
-  }
+}
 
-  /* New styles */
-
-  #mouseTracker {
+#mouseTracker {
     position: fixed;
     width: 200px;
     height: 200px;
     background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
     border-radius: 50%;
-    pointer-events: none; /* Allows clicks to pass through */
+    pointer-events: none;
     opacity: 0;
     transition: opacity 0.3s, transform 0.1s;
-    z-index: -1; /* Behind content */
+    z-index: -1;
+}
+
+/* Base styles and CSS custom properties */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --text-color: #2c3e50;
+  --light-bg: #ecf0f1;
+  --border-color: #bdc3c7;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+img[src^="pedro/"] {
+  width: 100px;
+}
+
+/* Main container with ID and class combination */
+#main-container.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  
+  /* Nested styles for header */
+  .header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 30px;
+    
+    /* Direct child selector - only direct h1 children */
+    & > .title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    /* Descendant selector - any nav inside header */
+    & .navigation {
+      text-align: center;
+      
+      /* Nested nav list */
+      & .nav-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        
+        /* Direct child li elements */
+        & > .nav-item {
+          position: relative;
+          
+          /* Direct child anchor tags */
+          & > .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2);
+            }
+          }
+        }
+      }
+    }
   }
+}
+
+/* Main content area */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  
+  /* Content sections */
+  & .content-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    
+    /* Section titles */
+    & .section-title {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 10px;
+    }
+  }
+}
+
+/* Section 1: Direct Child Selectors */
+#section-1 {
+  & .demo-box {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    
+    /* Direct child paragraph only */
+    & > .demo-text {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    
+    /* Nested box */
+    & .nested-box {
+      background-color: var(--light-bg);
+      padding: 15px;
+      border-radius: 4px;
+      
+      /* This paragraph is NOT a direct child of demo-box */
+      & .demo-text {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 8px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+/* Section 2: Descendant Selectors */
+#section-2 {
+  & .article {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    
+    /* Article header */
+    & .article-header {
+      background-color: var(--light-bg);
+      padding: 15px;
+      border-bottom: 1px solid var(--border-color);
+      
+      & .article-title {
+        color: var(--primary-color);
+        margin-bottom: 5px;
+      }
+      
+      & .article-meta {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Article content */
+    & .article-content {
+      padding: 20px;
+      
+      /* Any paragraph inside article content */
+      & .article-text {
+        margin-bottom: 15px;
+        line-height: 1.8;
+        
+        /* Strong elements inside article text */
+        & .highlight {
+          background-color: #f39c12;
+          color: white;
+          padding: 2px 6px;
+          border-radius: 3px;
+        }
+      }
+      
+      /* Blockquote */
+      & .quote {
+        border-left: 4px solid var(--primary-color);
+        padding-left: 20px;
+        margin: 20px 0;
+        font-style: italic;
+        
+        & .quote-text {
+          color: #555;
+          
+          /* Em elements inside quote text */
+          & .emphasis {
+            color: var(--accent-color);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Section 3: Sibling Selectors */
+#section-3 {
+  & .sibling-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    /* All sibling items */
+    & .sibling-item {
+      padding: 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      
+      /* First sibling */
+      &.first {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      /* Adjacent sibling selector - second item that follows first */
+      &.first + &.second {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+      
+      /* General sibling selector - any sibling that follows first */
+      &.first ~ &.third,
+      &.first ~ &.fourth {
+        background-color: var(--accent-color);
+        color: white;
+      }
+      
+      /* Adjacent sibling - third follows second */
+      &.second + &.third {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+/* Section 4: Mixed Selectors */
+#mixed-container.mixed-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: var(--light-bg);
+  border-radius: 8px;
+  
+  /* Label with class */
+  & .label {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* Input field */
+  & .input-field {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+  }
+  
+  /* Button base styles */
+  & .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    /* Primary button */
+    &.primary {
+      background-color: var(--primary-color);
+      color: white;
+      
+      &:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+      }
+    }
+    
+    /* Secondary button */
+    &.secondary {
+      background-color: var(--secondary-color);
+      color: white;
+      
+      &:hover {
+        background-color: #27ae60;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  & .widget {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    
+    & .widget-title {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+    
+    & .widget-list {
+      list-style: none;
+      
+      /* Direct child li elements */
+      & > .widget-item {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--light-bg);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        &:hover {
+          color: var(--primary-color);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  background-color: var(--text-color);
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+  
+  & .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    & .footer-text {
+      font-size: 0.9rem;
+    }
+    
+    & .footer-links {
+      display: flex;
+      gap: 20px;
+      
+      & .footer-link {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        
+        &:hover {
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  #main-container.container {
+    padding: 10px;
+  }
+  
+  .header {
+    & > .title {
+      font-size: 2rem;
+    }
+    
+    & .navigation .nav-list {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  
+  .footer .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+/* Additional complex selector examples */
+/* ID + class + tag combination */
+#main-container.container > header.header > h1.title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Multiple class selectors */
+.content-section.content-section {
+  position: relative;
+}
+
+/* Attribute selectors */
+input[type="text"].input-field {
+  font-family: inherit;
+}
+
+/* Pseudo-class combinations */
+.btn.primary:hover:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Nth-child selectors */
+.sibling-demo .sibling-item:nth-child(odd) {
+  border-left: 4px solid var(--primary-color);
+}
+
+.sibling-demo .sibling-item:nth-child(even) {
+  border-left: 4px solid var(--secondary-color);
+}
+
+/* Not selector */
+.widget-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/* Complex descendant with multiple levels */
+#main-container .main-content .content-section .demo-box .nested-box p {
+  font-style: italic;
+}
+
+/* Direct child with multiple conditions */
+#mixed-container > .btn.primary {
+  font-weight: bold;
+}
+
+/* Adjacent sibling with class */
+.sibling-item.first + .sibling-item.second {
+  border-radius: 8px;
+}
+
+/* General sibling with multiple classes */
+.btn.primary ~ .btn.secondary {
+  margin-top: 10px;
+}

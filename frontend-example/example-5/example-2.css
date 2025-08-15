@@ -1,0 +1,25 @@
+:root {
+    --bg: #0b0f14;
+    --ball: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: var(--bg); }
+  .stage {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  .ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: radial-gradient(circle at 35% 35%, #fff, var(--ball) 60%, #6d54d1 100%);
+    filter: drop-shadow(0 10px 25px #a78bfa66);
+    animation: bounce 1.2s cubic-bezier(.2,.7,.3,1) infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(-180px) scale(1.05, .95); }
+    50%      { transform: translateY(180px)  scale(.95, 1.05); }
+  }
+  

@@ -1,28 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Doggy API Demo</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Combinations Demo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="header">
-    <h1 class="title highlight">🐶 Random Dog Generator</h1>
-    <p id="subtitle">Click below to fetch a dog!</p>
-  </div>
-  
-  <button id="fetchBtn" aria-label="Fetch new dog">Get Dog!</button>
-  
-  <div id="dogContainer">
-    <!-- Filled by JavaScript -->
-  </div>
-  
-  <div class="dog-stats">
-    <p>Dogs fetched: <span id="counter">0</span></p>
-  </div>
+    <!-- Original Dog API Demo Section -->
+    <div class="header">
+        <h1 class="title highlight">🐶 Random Dog Generator</h1>
+        <p id="subtitle">Click below to fetch a dog!</p>
+    </div>
+    
+    <button id="fetchBtn" aria-label="Fetch new dog">Get Dog!</button>
+    
+    <div id="dogContainer">
+        <!-- Filled by JavaScript -->
+    </div>
 
-  <!-- New styles: exercise -->
-  <div id="mouseTracker"></div>
+    <!-- #alexa > h1 -->
+    <div id="alexa">
+        <div class="pedro">
+            <h1>Hello</h1>
+        </div>
+    </div>
+    <h1 class="standout cats"></h1>
 
-  <script src="script.js"></script>
+    <div class="dog-stats animals pedro">
+        <p>Dogs fetched: <span id="counter">0</span></p>
+    </div>
+
+    <!-- New styles: exercise -->
+    <div id="mouseTracker"></div>
+
+    <hr style="margin: 40px 0; border: 2px solid #3498db;">
+
+    <!-- CSS Selector Demonstrations -->
+    <div id="main-container" class="container">
+        <header class="header">
+            <h1 class="title">CSS Selector Combinations</h1>
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <section id="section-1" class="content-section">
+                <h2 class="section-title">Direct Child Selectors</h2>
+                <div class="demo-box">
+                    <p class="demo-text">This is a direct child paragraph</p>
+                    <div class="nested-box">
+                        <p class="demo-text">This is a descendant paragraph (not direct child)</p>
+                    </div>
+                </div>
+            </section>
+
+            <img src="pedro/pedro.jpg">
+            <img src="pedro/noel.jpg">
+
+            <section id="section-2" class="content-section">
+                <h2 class="section-title">Descendant Selectors</h2>
+                <article class="article">
+                    <header class="article-header">
+                        <h3 class="article-title">Article Title</h3>
+                        <span class="article-meta">Published: 2024</span>
+                    </header>
+                    <div class="article-content">
+                        <p class="article-text">This is article content with <strong class="highlight">highlighted text</strong>.</p>
+                        <blockquote class="quote">
+                            <p class="quote-text">This is a quote with <em class="emphasis">emphasized text</em>.</p>
+                        </blockquote>
+                    </div>
+                </article>
+            </section>
+
+            <section id="section-3" class="content-section">
+                <h2 class="section-title">Sibling Selectors</h2>
+                <div class="sibling-demo">
+                    <div class="sibling-item first">First sibling</div>
+                    <div class="sibling-item second">Second sibling</div>
+                    <div class="sibling-item third">Third sibling</div>
+                    <div class="sibling-item fourth">Fourth sibling</div>
+                </div>
+            </section>
+
+            <section id="section-4" class="content-section">
+                <h2 class="section-title">Mixed Selectors</h2>
+                <div id="mixed-container" class="mixed-demo">
+                    <span class="label">Label:</span>
+                    <input type="text" class="input-field" placeholder="Enter text">
+                    <button class="btn primary">Primary Button</button>
+                    <button class="btn secondary">Secondary Button</button>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">Widget Title</h3>
+                    <ul class="widget-list">
+                        <li class="widget-item">Widget item 1</li>
+                        <li class="widget-item">Widget item 2</li>
+                        <li class="widget-item">Widget item 3</li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 CSS Selector Demo</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy</a>
+                    <a href="#" class="footer-link">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

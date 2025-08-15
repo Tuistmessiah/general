@@ -1,0 +1,30 @@
+:root {
+    --bg: #0b0f14;
+    --accent: #5eead4;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: white;
+    font: 15px/1.4 system-ui, sans-serif;
+  }
+  .stage {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .box {
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--accent);
+    box-shadow: 0 0 20px #5eead488, 0 0 50px #5eead433;
+    will-change: transform;
+  }
+  

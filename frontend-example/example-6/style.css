@@ -1,0 +1,53 @@
+:root {
+    --bg: #0b1020;
+    --panel: #121933;
+    --text: #e6eaf2;
+    --muted: #a5b0c4;
+    --accent: #70d6ff;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: radial-gradient(1200px 800px at 50% 20%, #0f1733 0%, var(--bg) 60%);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.4rem;
+    margin: 0 0 1rem 0;
+    color: var(--text);
+    letter-spacing: 0.2px;
+  }
+  
+  .chart-card {
+    padding: 1rem;
+    background: var(--panel);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+  
+  /* Make canvas responsive: let its container drive size */
+  .chart-card canvas {
+    display: block;
+    width: 100%;
+    height: 360px; /* tweak as you like */
+  }
+  
+  footer {
+    color: var(--muted);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  

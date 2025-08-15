@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sine Square</title>
+  <link rel="stylesheet" href="example-1.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="box"></div>
+  </div>
+
+  <script>
+    const box = document.querySelector('.box');
+    const stage = document.querySelector('.stage');
+
+    let t = 0;
+    function tick() {
+      // center + amplitude * sin(speed * time)
+      const W = stage.clientWidth;
+      const center = W / 2;
+      const amp = Math.min(200, W * 0.35);
+      const x = center + amp * Math.sin(t) - 25; // minus half box width
+      box.style.transform = `translateX(${x}px)`;
+      t += 0.03; // speed
+      requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
+</body>
+</html>
